@@ -74,7 +74,7 @@ int main(){
 
    char odds[]={'W','R','Y','I','P','S', 'F','H','K','Z','C','B','M'};
 
-  for(unsigned int i=0;i<sizeof(evens);i++){
+  for(int i=0;i<sizeof(evens);i++){
     cout<<evens[i]<<endl;
     cin>>input;
      if (cin.fail() || cin.peek() != '\n') {
