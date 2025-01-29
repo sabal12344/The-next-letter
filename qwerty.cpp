@@ -1,4 +1,5 @@
 #include <iostream>
+#include<cstdlib>
 #include<chrono>
 using namespace std;
 char accuracy(int score){
@@ -67,6 +68,10 @@ void evaluation(double time, int score){
 
 int main(){
   auto start = chrono::high_resolution_clock::now();
+  unsigned seed = chrono::system_clock::now().time_since_epoch().count();
+
+  srand(seed);
+
   
    char input;
    int score=0;
@@ -74,8 +79,11 @@ int main(){
 
    char odds[]={'W','R','Y','I','P','S', 'F','H','K','Z','C','B','M'};
 
-  for(int i=0;i<sizeof(evens);i++){
-    cout<<evens[i]<<endl;
+   
+
+  for(unsigned int i=0;i<sizeof(evens);i++){
+    int random = rand()%13;
+    cout<<evens[random]<<endl;
     cin>>input;
      if (cin.fail() || cin.peek() != '\n') {
             cin.clear();
@@ -87,7 +95,7 @@ int main(){
         }
     input=toupper(input);
     
-    if(input==odds[i]){
+    if(input==odds[random]){
         score++;
     }
     auto end =chrono::high_resolution_clock::now();
@@ -100,6 +108,7 @@ int main(){
 
   auto end =chrono::high_resolution_clock::now();
   chrono::duration<double> timetaken = end - start;
+
   double t = timetaken.count();
   cout<<"\nTime taken : "<<t<<" seconds.";
   cout<<"\n\n\t\tEvaluation : ";
