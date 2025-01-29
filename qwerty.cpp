@@ -38,7 +38,7 @@ void evaluation(double time, int score){
   else if(time<=9){
      switch(acc){
       case 'a':
-      cout<<"That was fast, and scored perfect";
+      cout<<"That was fast, and you scored perfect";
       break;
 
       case 'b':
