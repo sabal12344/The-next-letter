@@ -19,7 +19,7 @@ char accuracy(int score){
 }
 void evaluation(double time, int score){
   char acc=accuracy(score);
-  if(time<=3){
+  if(time<=6){
     switch(acc){
       case 'a':
       cout<<"You are a superhuman";
@@ -36,7 +36,7 @@ void evaluation(double time, int score){
 
     
   }
-  else if(time<=9){
+  else if(time<=15){
      switch(acc){
       case 'a':
       cout<<"That was fast, and you scored perfect";
@@ -51,7 +51,7 @@ void evaluation(double time, int score){
       break;
     }
   }
-  else if(time<=15){
+  else if(time<=30){
     if(acc=='a'){
       cout<<"Good score";
     }
